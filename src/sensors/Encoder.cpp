@@ -90,7 +90,7 @@ void Encoder::handleIndex() {
       // align encoder on each index
       long tmp = pulse_counter;
       // corrent the counter value
-      pulse_counter = round((double)pulse_counter/(double)cpr)*cpr;
+      pulse_counter = round((double)pulse_counter*16.0f/(double)cpr)*cpr/16.0f;
       // preserve relative speed
       prev_pulse_counter += pulse_counter - tmp;
     }
